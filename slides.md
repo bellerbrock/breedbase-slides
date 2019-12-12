@@ -1,12 +1,13 @@
 ---
-title: Breedbase Workshop
+title: Breedbase Slides
 separator: <!--s-->
 verticalSeparator: <!--v-->
-theme: solarized
+theme: moon
+highlight-theme: github
 revealOptions:
     transition: 'fade'
 ---
-# Perl Primer
+## Perl Primer
 
 Getting Started with Perl
 
@@ -25,11 +26,11 @@ Note: 1987 vs 1989, Python from Monty Python and Perl from Pearl but Pearl was a
 
 <!--s-->
 
-# Getting Started
+## Getting Started
 
 Scripts should start with
 
-```
+```perl
 #!/usr/bin/perl
 use strict;
 use warnings;
@@ -37,20 +38,22 @@ use warnings;
 
 <!--s-->
 
-# Why use pragmas?
+## Why use pragmas?
 
 Without them, almost *anything* is valid perl
-<p align="left">
-  <img src="images/tweet.png">
-</p>
-<p align="right">
-  <img src="images/paper.png">
-</p>
+
+<div>
+  <img style="display: inline-block; height: auto; width: 40%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/tweet.png">
+  <img style="display: inline-block; height: auto; width: 40%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/paper.png">
+</div>
+<div>
+  <img style="display: inline-block; height: auto; width: 90%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/paint.png">
+</div>
 https://famicol.in/sigbovik/2019.pdf
 
 <!--s-->
 
-# Some Key Differences from Python
+## Some Key Differences from Python
 
 '{}' and ';' are necessary because white space is not meaningful.
 
@@ -64,25 +67,25 @@ Perl core is larger, has more built-in features like text processing and sys/os 
 
 <!--s-->
 
-# White Space
+## White Space
 
 
 
 <!--s-->
 
-# Basic Types
+## Basic Types
 
 
 
 <!--s-->
 
-# Referencing
+## Referencing
 
 
 
 <!--s-->
 
-# Scoping
+## Scoping
 
 `my` provides lexical scoping; a variable declared with `my` is visible only within the block in which it is declared.
 Blocks of code are hunks within curly braces `{}`; files are also blocks.
@@ -93,13 +96,13 @@ rarely necessary, but local saves away the value of a package global and substit
 
 <!--s-->
 
-# Language features
+## Language features
 
 Perl regex examples
 
 <!--s-->
 
-# Some Additional Differences from Python
+## Some Additional Differences from Python
 
 Strings can be single or doubled quoted like in Python, but only double quoted strings interpolate any control characters inside them. q and qq plus a seporator can be used in place of '' and "".
 
@@ -120,7 +123,7 @@ print "$header\n"; # Prints "Dear Dr. Fred,"
 
 <!--s-->
 
-# Some Additional Differences from Python
+## Some Additional Differences from Python
 
 Like Python's ''', perlpod can be used for docstrings or multi line comments. Start with `=` plus an optional type and title, end with `=cut`
 
@@ -129,7 +132,7 @@ Like Python's ''', perlpod can be used for docstrings or multi line comments. St
 
 <!--s-->
 
-# Some Additional Differences from Python
+## Some Additional Differences from Python
 
 Perl does not really have a length operator like Python. scalar() simply provides a scalar context, and in a scalar context an array returns its size
 
@@ -139,7 +142,7 @@ Python: len(A)
 
 <!--s-->
 
-# Some Additional Differences from Python
+## Some Additional Differences from Python
 
 Perl uses closed intervals, while Python uses closed-open intervals.
 
@@ -151,7 +154,7 @@ Python: range(0, 10) or simply range(10) (assumes 0 as initial)
 
 <!--s-->
 
-# Some Additional Differences from Python
+## Some Additional Differences from Python
 
 Perl has little native support for Object Oriented programming, but powerful packages to add OO support exist
 
@@ -186,7 +189,7 @@ after 'clear' => sub {
 
 <!--s-->
 
-# Additional Resources
+## Additional Resources
 
 Table of equivalent terms from each language - https://www.lemoda.net/perl/perl-python/index.html
 
