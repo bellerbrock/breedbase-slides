@@ -1,0 +1,23 @@
+{
+  "name": "breedbase-workshop",
+  "version": "1.0.0",
+  "description": "Presentation: Breedbase Workshop",
+  "main": "index.js",
+  "scripts": {
+    "presentation": "reveal-md slides.md",
+    "generate": "reveal-md slides.md --static docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hifidelitygenetics/breedbase-workshop.git"
+  },
+  "author": "Bryan Ellerbrock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hifidelitygenetics/breedbase-workshop/issues"
+  },
+  "homepage": "https://github.com/hifidelitygenetics/breedbase-workshop#readme",
+  "devDependencies": {
+    "reveal-md": "^0.4.2"
+  }
+}
