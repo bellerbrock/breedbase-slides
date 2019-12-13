@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/hifidelitygenetics/breedbase-workshop#readme",
   "devDependencies": {
-    "reveal-md": "^0.4.2"
+    "reveal-md": "^0.4.3"
   }
 }
