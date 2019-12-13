@@ -96,9 +96,12 @@ Because whitespace is not meaningful
 
 #### White Space
 
-
 ```perl
-whitespace example here
+if ($true) {
+  do_something();
+}
+#same thing
+if($true){do_something;}
 ```
 <!--s-->
 
@@ -131,20 +134,45 @@ Not all variables are a reference.
 Those that are require explicit dereferencing.
 
 ```perl
-referencing example
+my %hash = (
+ one => 1,
+ two => 2
+);
+
+print_hash(\%hash);
+
+sub print_hash {
+  my $hash_ref = shift;
+  print %$hash_ref;     # prints one1two2
+}
 ```
 
 <!--s-->
 
 ### Scoping
 
-`my` provides lexical scoping; a variable declared with `my` is visible only within the block in which it is declared.
-Blocks of code are hunks within curly braces `{}`; files are also blocks.
-vars qw([list of var names]) or our (var_names]) can be used to create package globals.
-rarely necessary, but local saves away the value of a package global and substitutes a new value for all code within and called from the block in which the local declaration is made.
+`my` provides lexical scoping;
+A variable declared with `my` is visible only within the block in which it is declared.
+
+<!--s-->
+
+### Scoping
 
 ```perl
-scoping example
+my $string = 'global ';
+
+foreach (my $i=0; $i < 3; $i++) {
+  my $string = 'loop ';
+  if ($i == 2) {
+    my $string = 'if ';
+    print $string;
+  }
+  print $string;
+}
+
+print $string;
+
+# Outputs 'loop loop if loop global'
 ```
 
 <!--s-->
@@ -155,13 +183,21 @@ Perl core is larger, with more built-in features.
 
 Specifcally more text processing and sys/os interaction functions.
 
+<!--s-->
+
+### Language features
+
+Regex example
+
 ```
-regex example
+$s1 = "new string";        # change to new string
+$s2 = "new\nstring\with\nnew\nlines"; # change to new string
+$s2 =~ s/\n/[newline]/g;   # substitute newlines with the text "[newline]"
 ```
 
 <!--s-->
 
-### Additional Differences
+### Additional Differences: Quoting
 
 Strings can be single or doubled quoted like in Python, but only double quoted strings interpolate any control characters inside them.
 
@@ -171,7 +207,13 @@ $s2 = "a string with\ncontrol characters\n";
 $s3 = 'a "quoted" string';
 $s5 = "a string with '\" both kinds of quotes";
 $s6 = 'a stri\ng that au\tomatically escapes backslashes';
+```
 
+<!--s-->
+
+### Additional Differences: Quoting
+
+```perl
 $name    = "Fred";
 $title   = "Dr.";
 $header = "Dear $title $name,";
@@ -181,11 +223,15 @@ print "$header\n"; # Prints "Dear Dr. Fred,"
 
 <!--s-->
 
-### Additional Differences
+### Additional Differences: Comments
 
 Like Python's ''', perlpod can be used for docstrings or multi line comments.
 
 Start with `=` plus an optional type and title, end with `=cut`
+
+<!--s-->
+
+### Additional Differences: Comments
 
 ```perl
 =pod
@@ -197,9 +243,17 @@ Remember to check its return value, as in:
 
 <!--s-->
 
-### Additional Differences
+### Additional Differences: Length
 
-Perl does not have a length operator like Python. `scalar()` simply provides a scalar context, and in a scalar context an array returns its size
+Perl does not have a length operator like Python.
+
+`scalar()` simply provides a scalar context
+
+In a scalar context an array returns its size
+
+<!--s-->
+
+### Additional Differences: Length
 
 Perl: `scalar(@A)``
 
@@ -207,11 +261,11 @@ Python: `len(A)`
 
 <!--s-->
 
-## Some Additional Differences from Python
+### Additional Differences: Intervals
 
 Perl uses closed intervals, while Python uses closed-open intervals.
 
-Generate range of numbers:
+To generate a range of numbers:
 
 Perl: `(0..9)`
 
@@ -219,7 +273,7 @@ Python: `range(0, 10)` or simply `range(10)` (assumes 0 as initial)
 
 <!--s-->
 
-### Additional Differences
+### Additional Differences: OO
 
 Perl has little native support for Object Oriented programming (OO)
 
