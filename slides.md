@@ -43,11 +43,18 @@ use warnings;
 Without them, almost *anything* is valid perl
 
 <div>
-  <img style="display: inline-block; height: auto; width: 40%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/tweet.png">
-  <img style="display: inline-block; height: auto; width: 40%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/paper.png">
+  <img style="display: inline-block; height: auto; width: 60%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/tweet.png">
 </div>
+
+<!--s-->
+
+## Why use pragmas?
+
+Without them, almost *anything* is valid perl
+
 <div>
-  <img style="display: inline-block; height: auto; width: 90%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/paint.png">
+  <img style="display: inline-block; height: auto; width: 50%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/paint.png">
+  <img style="display: inline-block; height: auto; width: 40%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/paper.png">
 </div>
 https://famicol.in/sigbovik/2019.pdf
 
