@@ -27,9 +27,35 @@ Note: 1987 vs 1989, Python from Monty Python and Perl from Pearl but Pearl was a
 
 <!--s-->
 
-### Getting Started
+### Bad Press
 
-Scripts should start with
+Due it's flexibility, Perl sometimes has a bad reputation
+
+<div>
+  <img style="display: inline-block; height: auto; width: 60%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/tweet.png">
+</div>
+
+<!--s-->
+
+### Bad Press
+
+It's not just hyperbole, Perl can be *very* flexible
+
+<div>
+  <img style="display: inline-block; height: auto; width: 50%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/paint.png">
+  <img style="display: inline-block; height: auto; width: 40%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/paper.png">
+</div>
+https://famicol.in/sigbovik/2019.pdf
+
+<!--s-->
+
+### Normal Perl
+
+But no need for craziness unless you're writting one liners or playing Perl golf
+
+Simple practices can ensure perl stays just as sane as other languages
+
+Scripts should start with:
 
 ```perl
 #!/usr/bin/perl
@@ -39,25 +65,14 @@ use warnings;
 
 <!--s-->
 
-### Why use pragmas?
 
-Without them, almost *anything* is valid perl
+### Normal Perl
 
-<div>
-  <img style="display: inline-block; height: auto; width: 60%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/tweet.png">
-</div>
+Common sense practices are also key
 
-<!--s-->
-
-### Why use pragmas?
-
-Without them, almost *anything* is valid perl
-
-<div>
-  <img style="display: inline-block; height: auto; width: 50%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/paint.png">
-  <img style="display: inline-block; height: auto; width: 40%;" src="https://raw.githubusercontent.com/bellerbrock/breedbase-slides/master/images/paper.png">
-</div>
-https://famicol.in/sigbovik/2019.pdf
+* Make standard use of whitespace
+* Be consistent
+* Don't repeat yourself
 
 <!--s-->
 
@@ -73,21 +88,51 @@ https://famicol.in/sigbovik/2019.pdf
 
 #### White Space
 
-'{}' and ';' are necessary because white space is not meaningful.
+Because whitespace is not meaningful
+* `{}` required around every block of code
+* A `;` at the end of every statement
 
+<!--s-->
+
+#### White Space
+
+
+```perl
+whitespace example here
+```
+<!--s-->
+
+### Basic Types
+
+Different types of variables (scalar, array, and hash)
+
+Defined via a basic type system (‘$’, ‘@’, and ‘%’).
 
 <!--s-->
 
 ### Basic Types
 
-Different types of variables (scalar, array, and hash) are defined via a basic type system (‘$’, ‘@’, and ‘%’).
-
+```perl
+my $int = 1;
+my $string = 'Hello';
+my @array = ['Cruel','World'];
+my %hash = (
+  greeting => $string,
+  addressee => \@array
+);
+```
 
 <!--s-->
 
 ### Referencing
 
-Not all variables are a reference, those that are require explicit dereferencing.
+Not all variables are a reference.
+
+Those that are require explicit dereferencing.
+
+```perl
+referencing example
+```
 
 <!--s-->
 
@@ -98,13 +143,21 @@ Blocks of code are hunks within curly braces `{}`; files are also blocks.
 vars qw([list of var names]) or our (var_names]) can be used to create package globals.
 rarely necessary, but local saves away the value of a package global and substitutes a new value for all code within and called from the block in which the local declaration is made.
 
-(from https://www.perlmonks.org/?node_id=66677)
+```perl
+scoping example
+```
 
 <!--s-->
 
 ### Language features
 
-Perl core is larger, has more built-in features like text processing and sys/os interaction functions.
+Perl core is larger, with more built-in features.
+
+Specifcally more text processing and sys/os interaction functions.
+
+```
+regex example
+```
 
 <!--s-->
 
@@ -130,10 +183,17 @@ print "$header\n"; # Prints "Dear Dr. Fred,"
 
 ### Additional Differences
 
-Like Python's ''', perlpod can be used for docstrings or multi line comments. Start with `=` plus an optional type and title, end with `=cut`
+Like Python's ''', perlpod can be used for docstrings or multi line comments.
 
+Start with `=` plus an optional type and title, end with `=cut`
 
-
+```perl
+=pod
+This function does stuff.
+Remember to check its return value, as in:
+  stuff() || die "Couldn't do stuff!";
+=cut
+```
 
 <!--s-->
 
@@ -159,11 +219,15 @@ Python: `range(0, 10)` or simply `range(10)` (assumes 0 as initial)
 
 <!--s-->
 
-## Some Additional Differences from Python
+### Additional Differences
 
-Perl has little native support for Object Oriented programming, but powerful packages to add OO support exist
+Perl has little native support for Object Oriented programming (OO)
 
-Breedbase uses Moose
+But powerful packages to add OO support exist - Breedbase uses Moose
+
+### Moose
+
+Simple Package Definition
 
 ```perl
 package Point;
@@ -177,7 +241,13 @@ sub clear {
     $self->x(0);
     $self->y(0);
 }
+```
 
+### Moose
+
+Simple Inheritance
+
+```perl
 package Point3D;
 use Moose;
 
@@ -191,18 +261,36 @@ after 'clear' => sub {
 };
 ```
 
+### Moose
+
+Simple Instantiation And Use
+
+```perl
+use Point3D;
+
+my $point = Point3D->new(
+  x => 1,
+  y => 1,
+  z => 1,
+);
+
+# DO SOMETHING
+
+$point->clear(); # Sets x,y,z to 0,0,0
+
+```
 
 <!--s-->
 
 ## Additional Resources
 
-Table of equivalent terms from each language - https://www.lemoda.net/perl/perl-python/index.html
+[Table of equivalent terms from each language](https://www.lemoda.net/perl/perl-python/index.html)
 
-Side by Side code comparisons - https://wiki.python.org/moin/PerlPhrasebook
+[Side by Side code comparisons](https://wiki.python.org/moin/PerlPhrasebook)
 
-perl maven
+[Perl Maven Tutorial](perl maven)
 
-cpan
+[Comprehensive Perl Archive Network - CPAN](cpan)
 
 <!--s-->
 
@@ -213,7 +301,7 @@ cpan
     float: left;
     z-index:-10;
     width:48%;
-    font-size: 0.75em;
+    font-size: 20px;
     line-height: 1.5;
 }
 .right {
@@ -222,7 +310,7 @@ cpan
     text-align: center;
     z-index:-10;
     width:48%;
-    font-size: 0.75em;
+    font-size: 20px;
     line-height: 1.5;
 }
 </style>
