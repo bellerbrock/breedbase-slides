@@ -255,9 +255,13 @@ In a scalar context an array returns its size
 
 ### Additional Differences: Length
 
-Perl: `scalar(@A)``
+```perl
+my @A = [0,1,2,3];
+print scalar(@A); # prints 4
 
-Python: `len(A)`
+A = [0,1,2,3]
+print(len(A)) # prints 4
+```
 
 <!--s-->
 
@@ -279,6 +283,8 @@ Perl has little native support for Object Oriented programming (OO)
 
 But powerful packages to add OO support exist - Breedbase uses Moose
 
+<!--s-->
+
 ### Moose
 
 Simple Package Definition
@@ -297,6 +303,8 @@ sub clear {
 }
 ```
 
+<!--s-->
+
 ### Moose
 
 Simple Inheritance
@@ -314,6 +322,8 @@ after 'clear' => sub {
     $self->z(0);
 };
 ```
+
+<!--s-->
 
 ### Moose
 
@@ -355,7 +365,7 @@ $point->clear(); # Sets x,y,z to 0,0,0
     float: left;
     z-index:-10;
     width:48%;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.5;
 }
 .right {
@@ -364,7 +374,7 @@ $point->clear(); # Sets x,y,z to 0,0,0
     text-align: center;
     z-index:-10;
     width:48%;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.5;
 }
 </style>
